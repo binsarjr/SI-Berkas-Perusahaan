@@ -30,10 +30,13 @@ namespace SI_Berkas_Perusahaan.View
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keluarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.referensiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.penanggungJawabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jenisBerkasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiBerkasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.berkasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +44,7 @@ namespace SI_Berkas_Perusahaan.View
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
             this.referensiToolStripMenuItem,
             this.transaksiBerkasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -49,6 +53,22 @@ namespace SI_Berkas_Perusahaan.View
             this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.keluarToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // keluarToolStripMenuItem
+            // 
+            this.keluarToolStripMenuItem.Name = "keluarToolStripMenuItem";
+            this.keluarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.keluarToolStripMenuItem.Text = "Keluar";
+            this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
             // 
             // referensiToolStripMenuItem
             // 
@@ -76,10 +96,18 @@ namespace SI_Berkas_Perusahaan.View
             // 
             // transaksiBerkasToolStripMenuItem
             // 
+            this.transaksiBerkasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.berkasToolStripMenuItem});
             this.transaksiBerkasToolStripMenuItem.Name = "transaksiBerkasToolStripMenuItem";
-            this.transaksiBerkasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.transaksiBerkasToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.transaksiBerkasToolStripMenuItem.Text = "Transaksi Berkas";
+            this.transaksiBerkasToolStripMenuItem.Size = new System.Drawing.Size(66, 22);
+            this.transaksiBerkasToolStripMenuItem.Text = "Transaksi";
+            // 
+            // berkasToolStripMenuItem
+            // 
+            this.berkasToolStripMenuItem.Name = "berkasToolStripMenuItem";
+            this.berkasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.berkasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.berkasToolStripMenuItem.Text = "Berkas";
             // 
             // FrmUtama
             // 
@@ -88,7 +116,7 @@ namespace SI_Berkas_Perusahaan.View
             this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmUtama";
             this.Text = "FrmUtama";
             this.menuStrip1.ResumeLayout(false);
@@ -105,5 +133,8 @@ namespace SI_Berkas_Perusahaan.View
         private System.Windows.Forms.ToolStripMenuItem penanggungJawabToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jenisBerkasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transaksiBerkasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem keluarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem berkasToolStripMenuItem;
     }
 }

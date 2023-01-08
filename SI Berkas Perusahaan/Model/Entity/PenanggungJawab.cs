@@ -8,6 +8,7 @@ namespace SI_Berkas_Perusahaan.Model.Entity
 {
     public class PenanggungJawab
     {
+        public int Id { get; set; }
         public string NamaLengkap { get; set; }
         public string NoHP { get; set; }
         public string Email { get; set; }

@@ -45,57 +45,65 @@ namespace SI_Berkas_Perusahaan.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 23);
+            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 20);
+            this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nama Lengkap";
             // 
             // txtNamaLengkap
             // 
-            this.txtNamaLengkap.Location = new System.Drawing.Point(27, 57);
+            this.txtNamaLengkap.Location = new System.Drawing.Point(18, 37);
+            this.txtNamaLengkap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNamaLengkap.Name = "txtNamaLengkap";
-            this.txtNamaLengkap.Size = new System.Drawing.Size(243, 26);
+            this.txtNamaLengkap.Size = new System.Drawing.Size(163, 20);
             this.txtNamaLengkap.TabIndex = 1;
             // 
             // txtNoHP
             // 
-            this.txtNoHP.Location = new System.Drawing.Point(27, 135);
+            this.txtNoHP.Location = new System.Drawing.Point(18, 88);
+            this.txtNoHP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNoHP.Name = "txtNoHP";
-            this.txtNoHP.Size = new System.Drawing.Size(243, 26);
+            this.txtNoHP.Size = new System.Drawing.Size(163, 20);
             this.txtNoHP.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 101);
+            this.label2.Location = new System.Drawing.Point(15, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "No HP.";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(331, 57);
+            this.txtEmail.Location = new System.Drawing.Point(221, 37);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(243, 26);
+            this.txtEmail.Size = new System.Drawing.Size(163, 20);
             this.txtEmail.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(327, 23);
+            this.label3.Location = new System.Drawing.Point(218, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Email";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lvwPenanggungJawab);
-            this.groupBox1.Location = new System.Drawing.Point(27, 257);
+            this.groupBox1.Location = new System.Drawing.Point(18, 167);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(736, 232);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(491, 151);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tabel Penanggung Jawab";
@@ -103,35 +111,38 @@ namespace SI_Berkas_Perusahaan.View
             // lvwPenanggungJawab
             // 
             this.lvwPenanggungJawab.HideSelection = false;
-            this.lvwPenanggungJawab.Location = new System.Drawing.Point(6, 25);
+            this.lvwPenanggungJawab.Location = new System.Drawing.Point(4, 16);
+            this.lvwPenanggungJawab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvwPenanggungJawab.Name = "lvwPenanggungJawab";
-            this.lvwPenanggungJawab.Size = new System.Drawing.Size(724, 201);
+            this.lvwPenanggungJawab.Size = new System.Drawing.Size(484, 132);
             this.lvwPenanggungJawab.TabIndex = 0;
             this.lvwPenanggungJawab.UseCompatibleStateImageBehavior = false;
             // 
             // btnTambah
             // 
-            this.btnTambah.Location = new System.Drawing.Point(27, 196);
+            this.btnTambah.Location = new System.Drawing.Point(18, 127);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(119, 36);
+            this.btnTambah.Size = new System.Drawing.Size(79, 23);
             this.btnTambah.TabIndex = 7;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(163, 196);
+            this.btnUpdate.Location = new System.Drawing.Point(109, 127);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(119, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(79, 23);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Perbaiki";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // FrmPenanggungJawab
+            // FrmEntryPenanggungJawab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 501);
+            this.ClientSize = new System.Drawing.Size(533, 326);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.groupBox1);
@@ -141,7 +152,9 @@ namespace SI_Berkas_Perusahaan.View
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNamaLengkap);
             this.Controls.Add(this.label1);
-            this.Name = "FrmPenanggungJawab";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "FrmEntryPenanggungJawab";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Entry Penanggung Jawab";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

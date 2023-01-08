@@ -24,5 +24,10 @@ namespace SI_Berkas_Perusahaan.View
             var frmPenanggungJawab = new FrmEntryPenanggungJawab();
             frmPenanggungJawab.ShowDialog();
         }
+
+        private void keluarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

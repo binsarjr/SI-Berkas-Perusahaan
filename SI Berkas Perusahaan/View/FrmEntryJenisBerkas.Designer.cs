@@ -131,6 +131,7 @@ namespace SI_Berkas_Perusahaan.View
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnTambah);
             this.Name = "FrmEntryJenisBerkas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Entry Jenis Berkas";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
