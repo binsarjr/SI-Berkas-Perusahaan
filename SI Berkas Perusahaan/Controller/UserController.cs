@@ -17,8 +17,8 @@ namespace SI_Berkas_Perusahaan.Controller
         public bool Attempt(string username, string password)
         {
             int result = 0;
-                
-            using(DbContext context= new DbContext())
+
+            using (DbContext context = new DbContext())
             {
                 _repository = new UserRepository(context);
                 result = _repository.ReadAttempt(username, password);
@@ -31,7 +31,7 @@ namespace SI_Berkas_Perusahaan.Controller
                 MessageBox.Show("Username dan Password tidak ditemukan !!!", "Peringatan",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-            return result==1;
+            return result == 1;
         }
 
     }

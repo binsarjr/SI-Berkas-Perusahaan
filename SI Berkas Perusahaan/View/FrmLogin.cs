@@ -18,6 +18,8 @@ namespace SI_Berkas_Perusahaan.View
         public FrmLogin()
         {
             InitializeComponent();
+            txtUsername.Text = "admin";
+            txtPassword.Text = "admin";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

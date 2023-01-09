@@ -46,13 +46,13 @@ namespace SI_Berkas_Perusahaan.Model.Repository
         {
             int result = 0;
 
-            string sql = @"UPDATE penanggung_jawab SET nama_lengkap=@nama_lengkap, nohp=@nohp,email=@email WHERE id=@id";
+            string sql = @"update penanggung_jawab set nama_lengkap=@nama_lengkap, nohp=@nohp, email=@email where id=@id";
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
                 cmd.Parameters.AddWithValue("@nama_lengkap", penanggungJawab.NamaLengkap);
                 cmd.Parameters.AddWithValue("@nohp", penanggungJawab.NoHP);
                 cmd.Parameters.AddWithValue("@email", penanggungJawab.Email);
-                cmd.Parameters.AddWithValue("@id", penanggungJawab.Id);
+                cmd.Parameters.AddWithValue("@id", penanggungJawab.Id.ToString());
                 try
                 {
                     result = cmd.ExecuteNonQuery();
