@@ -39,12 +39,6 @@ namespace SI_Berkas_Perusahaan.View
             lvwPenanggungJawab.Columns.Add("Email", 200, HorizontalAlignment.Left);
         }
 
-        private void LoadAllDataPenanggungJawab()
-        {
-            LoadDataPenanggungJawab(controller.ReadAll());
-            // setiap kali load data baru object penanggung jawab dikosongkan
-            ResetForm();
-        }
         private void ResetForm()
         {
             penanggungJawab = null;
@@ -58,6 +52,12 @@ namespace SI_Berkas_Perusahaan.View
                 {
                     this.lvwPenanggungJawab.Items[this.lvwPenanggungJawab.SelectedIndices[i]].Selected = false;
                 }
+        }
+        private void LoadAllDataPenanggungJawab()
+        {
+            LoadDataPenanggungJawab(controller.ReadAll());
+            // setiap kali load data baru object penanggung jawab dikosongkan
+            ResetForm();
         }
 
         private void LoadDataPenanggungJawab(List<PenanggungJawab> items)

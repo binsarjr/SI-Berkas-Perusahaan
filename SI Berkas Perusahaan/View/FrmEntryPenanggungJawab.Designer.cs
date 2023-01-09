@@ -29,6 +29,7 @@ namespace SI_Berkas_Perusahaan.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntryPenanggungJawab));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNamaLengkap = new System.Windows.Forms.TextBox();
             this.txtNoHP = new System.Windows.Forms.TextBox();
@@ -46,117 +47,81 @@ namespace SI_Berkas_Perusahaan.View
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 23);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nama Lengkap";
             // 
             // txtNamaLengkap
             // 
-            this.txtNamaLengkap.Location = new System.Drawing.Point(27, 57);
+            resources.ApplyResources(this.txtNamaLengkap, "txtNamaLengkap");
             this.txtNamaLengkap.Name = "txtNamaLengkap";
-            this.txtNamaLengkap.Size = new System.Drawing.Size(242, 26);
-            this.txtNamaLengkap.TabIndex = 1;
             // 
             // txtNoHP
             // 
-            this.txtNoHP.Location = new System.Drawing.Point(27, 135);
+            resources.ApplyResources(this.txtNoHP, "txtNoHP");
             this.txtNoHP.Name = "txtNoHP";
-            this.txtNoHP.Size = new System.Drawing.Size(242, 26);
-            this.txtNoHP.TabIndex = 3;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 102);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "No HP.";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(332, 57);
+            resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(242, 26);
-            this.txtEmail.TabIndex = 5;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(327, 23);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Email";
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.lvwPenanggungJawab);
-            this.groupBox1.Location = new System.Drawing.Point(27, 257);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(736, 232);
-            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tabel Penanggung Jawab";
             // 
             // lvwPenanggungJawab
             // 
+            resources.ApplyResources(this.lvwPenanggungJawab, "lvwPenanggungJawab");
             this.lvwPenanggungJawab.HideSelection = false;
-            this.lvwPenanggungJawab.Location = new System.Drawing.Point(6, 25);
             this.lvwPenanggungJawab.Name = "lvwPenanggungJawab";
-            this.lvwPenanggungJawab.Size = new System.Drawing.Size(724, 201);
-            this.lvwPenanggungJawab.TabIndex = 0;
             this.lvwPenanggungJawab.UseCompatibleStateImageBehavior = false;
             this.lvwPenanggungJawab.SelectedIndexChanged += new System.EventHandler(this.lvwPenanggungJawab_SelectedIndexChanged);
             // 
             // btnTambah
             // 
-            this.btnTambah.Location = new System.Drawing.Point(27, 195);
+            resources.ApplyResources(this.btnTambah, "btnTambah");
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(118, 35);
-            this.btnTambah.TabIndex = 7;
-            this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = true;
             this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(151, 195);
+            resources.ApplyResources(this.btnUpdate, "btnUpdate");
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(118, 35);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Perbaiki";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(275, 195);
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(118, 35);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Hapus";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(399, 195);
+            resources.ApplyResources(this.btnReset, "btnReset");
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(118, 35);
-            this.btnReset.TabIndex = 10;
-            this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FrmEntryPenanggungJawab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 502);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -169,8 +134,6 @@ namespace SI_Berkas_Perusahaan.View
             this.Controls.Add(this.txtNamaLengkap);
             this.Controls.Add(this.label1);
             this.Name = "FrmEntryPenanggungJawab";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Entry Penanggung Jawab";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

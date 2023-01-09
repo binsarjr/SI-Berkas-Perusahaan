@@ -42,6 +42,7 @@ namespace SI_Berkas_Perusahaan.View
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -49,8 +50,8 @@ namespace SI_Berkas_Perusahaan.View
             this.transaksiBerkasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,14 +60,14 @@ namespace SI_Berkas_Perusahaan.View
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.keluarToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // keluarToolStripMenuItem
             // 
             this.keluarToolStripMenuItem.Name = "keluarToolStripMenuItem";
             this.keluarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.keluarToolStripMenuItem.Text = "Keluar";
             this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
             // 
@@ -76,14 +77,14 @@ namespace SI_Berkas_Perusahaan.View
             this.penanggungJawabToolStripMenuItem,
             this.jenisBerkasToolStripMenuItem});
             this.referensiToolStripMenuItem.Name = "referensiToolStripMenuItem";
-            this.referensiToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
+            this.referensiToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
             this.referensiToolStripMenuItem.Text = "Referensi";
             // 
             // penanggungJawabToolStripMenuItem
             // 
             this.penanggungJawabToolStripMenuItem.Name = "penanggungJawabToolStripMenuItem";
             this.penanggungJawabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.J)));
-            this.penanggungJawabToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.penanggungJawabToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
             this.penanggungJawabToolStripMenuItem.Text = "Penanggung Jawab";
             this.penanggungJawabToolStripMenuItem.Click += new System.EventHandler(this.penanggungJawabToolStripMenuItem_Click);
             // 
@@ -91,34 +92,34 @@ namespace SI_Berkas_Perusahaan.View
             // 
             this.jenisBerkasToolStripMenuItem.Name = "jenisBerkasToolStripMenuItem";
             this.jenisBerkasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.jenisBerkasToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.jenisBerkasToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
             this.jenisBerkasToolStripMenuItem.Text = "Jenis Berkas";
+            this.jenisBerkasToolStripMenuItem.Click += new System.EventHandler(this.jenisBerkasToolStripMenuItem_Click);
             // 
             // transaksiBerkasToolStripMenuItem
             // 
             this.transaksiBerkasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.berkasToolStripMenuItem});
             this.transaksiBerkasToolStripMenuItem.Name = "transaksiBerkasToolStripMenuItem";
-            this.transaksiBerkasToolStripMenuItem.Size = new System.Drawing.Size(66, 22);
+            this.transaksiBerkasToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
             this.transaksiBerkasToolStripMenuItem.Text = "Transaksi";
             // 
             // berkasToolStripMenuItem
             // 
             this.berkasToolStripMenuItem.Name = "berkasToolStripMenuItem";
             this.berkasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.berkasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.berkasToolStripMenuItem.Size = new System.Drawing.Size(229, 34);
             this.berkasToolStripMenuItem.Text = "Berkas";
             // 
             // FrmUtama
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmUtama";
-            this.Text = "FrmUtama";
+            this.Text = "SI Pendataan Berkas";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

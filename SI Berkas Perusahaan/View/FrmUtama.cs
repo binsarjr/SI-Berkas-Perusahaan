@@ -21,13 +21,19 @@ namespace SI_Berkas_Perusahaan.View
 
         private void penanggungJawabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frmPenanggungJawab = new FrmEntryPenanggungJawab();
-            frmPenanggungJawab.ShowDialog();
+            var frmEntryPenanggungJawab = new FrmEntryPenanggungJawab();
+            frmEntryPenanggungJawab.ShowDialog();
         }
 
         private void keluarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void jenisBerkasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmEntryJenisBerkas = new FrmEntryJenisBerkas();
+            frmEntryJenisBerkas.ShowDialog();
         }
     }
 }

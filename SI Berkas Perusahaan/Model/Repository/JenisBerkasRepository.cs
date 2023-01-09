@@ -4,37 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 using System.Data.SQLite;
 using SI_Berkas_Perusahaan.Model.Context;
-using SI_Berkas_Perusahaan.Model.Entity;
 
+using SI_Berkas_Perusahaan.Model.Entity;
 namespace SI_Berkas_Perusahaan.Model.Repository
 {
-    public class PenanggungJawabRepository
+    public class JenisBerkasRepository
     {
         private SQLiteConnection _conn;
-        public PenanggungJawabRepository(DbContext context)
+        public JenisBerkasRepository(DbContext context)
         {
             _conn = context.Conn;
         }
 
-        public int Create(PenanggungJawab penanggungJawab)
+        public int Create(JenisBerkas item)
         {
             int result = 0;
 
-            string sql = @"INSERT INTO penanggung_jawab (nama_lengkap,nohp,email) values (@nama_lengkap, @nohp, @email)";
+            string sql = @"INSERT INTO jenis_berkas (kode,nama) values (@kode, @nama)";
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("@nama_lengkap", penanggungJawab.NamaLengkap);
-                cmd.Parameters.AddWithValue("@nohp", penanggungJawab.NoHP);
-                cmd.Parameters.AddWithValue("@email", penanggungJawab.Email);
+                cmd.Parameters.AddWithValue("@kode", item.Kode);
+                cmd.Parameters.AddWithValue("@nama", item.Nama);
                 try
                 {
                     result = cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.Print("Create Penanggung Jawab error: {0}", ex.Message);
+                    System.Diagnostics.Debug.Print("Create Jenis Berkas error: {0}", ex.Message);
                 }
 
             }
@@ -42,38 +42,36 @@ namespace SI_Berkas_Perusahaan.Model.Repository
             return result;
         }
 
-        public int Update(PenanggungJawab penanggungJawab)
+        public int Update(JenisBerkas item)
         {
             int result = 0;
 
-            string sql = @"update penanggung_jawab set nama_lengkap=@nama_lengkap, nohp=@nohp, email=@email where id=@id";
+            string sql = @"update jenis_berkas set nama=@nama where kode=@kode";
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("@nama_lengkap", penanggungJawab.NamaLengkap);
-                cmd.Parameters.AddWithValue("@nohp", penanggungJawab.NoHP);
-                cmd.Parameters.AddWithValue("@email", penanggungJawab.Email);
-                cmd.Parameters.AddWithValue("@id", penanggungJawab.Id.ToString());
+                cmd.Parameters.AddWithValue("@nama", item.Nama);
+                cmd.Parameters.AddWithValue("@kode", item.Kode);
                 try
                 {
                     result = cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.Print("Update PenanggungJawab error: {0}", ex.Message);
+                    System.Diagnostics.Debug.Print("Update Jenis Berkas error: {0}", ex.Message);
                 }
 
             }
 
             return result;
         }
-        public int Delete(PenanggungJawab penanggungJawab)
+        public int Delete(JenisBerkas item)
         {
             int result = 0;
 
-            string sql = @"DELETE FROM penanggung_jawab WHERE id=@id";
+            string sql = @"DELETE FROM jenis_berkas WHERE kode=@kode";
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("@id", penanggungJawab.Id);
+                cmd.Parameters.AddWithValue("@kode", item.Kode);
                 try
                 {
                     result = cmd.ExecuteNonQuery();
@@ -87,27 +85,25 @@ namespace SI_Berkas_Perusahaan.Model.Repository
 
             return result;
         }
-        public List<PenanggungJawab> ReadAll()
+        public List<JenisBerkas> ReadAll(string nama = "")
         {
-            var items = new List<PenanggungJawab>();
+            var items = new List<JenisBerkas>();
 
 
             try
             {
-                string sql = @"select id, nama_lengkap, nohp,email
- from penanggung_jawab
- order by nama_lengkap";
+                string sql = @"select kode,nama
+ from jenis_berkas
+ order by nama";
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
                 {
                     using (SQLiteDataReader dtr = cmd.ExecuteReader())
                     {
                         while (dtr.Read())
                         {
-                            var item = new PenanggungJawab();
-                            item.Id = Convert.ToInt32(dtr["id"].ToString());
-                            item.NamaLengkap = dtr["nama_lengkap"].ToString();
-                            item.NoHP = dtr["nohp"].ToString();
-                            item.Email = dtr["email"].ToString();
+                            var item = new JenisBerkas();
+                            item.Nama = dtr["nama"].ToString();
+                            item.Kode = dtr["kode"].ToString();
                             items.Add(item);
                         }
                     }
@@ -115,22 +111,22 @@ namespace SI_Berkas_Perusahaan.Model.Repository
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Print("ReadAll PenanggungJawab error: {0}", ex.Message);
+                System.Diagnostics.Debug.Print("ReadAll JenisBerkas error: {0}", ex.Message);
             }
 
             return items;
         }
 
-        public List<PenanggungJawab> ReadByName(string nama)
+        public List<JenisBerkas> ReadByName(string nama)
         {
-            var items = new List<PenanggungJawab>();
+            var items = new List<JenisBerkas>();
 
 
             try
             {
-                string sql = @"select id, nama_lengkap, nohp,email
- from penanggung_jawab where nama_lengkap=@nama
- order by nama_lengkap";
+                string sql = @"select kode,nama
+ from jenis_berkas where nama@nama
+ order by nama";
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
                 {
                     cmd.Parameters.AddWithValue("@nama", string.Format("%{0}%", nama));
@@ -138,11 +134,9 @@ namespace SI_Berkas_Perusahaan.Model.Repository
                     {
                         while (dtr.Read())
                         {
-                            var item = new PenanggungJawab();
-                            item.Id = Convert.ToInt32(dtr["id"].ToString());
-                            item.NamaLengkap = dtr["nama_lengkap"].ToString();
-                            item.NoHP = dtr["nohp"].ToString();
-                            item.Email = dtr["email"].ToString();
+                            var item = new JenisBerkas();
+                            item.Nama = dtr["nama"].ToString();
+                            item.Kode = dtr["kode"].ToString();
                             items.Add(item);
                         }
                     }
@@ -184,6 +178,5 @@ namespace SI_Berkas_Perusahaan.Model.Repository
             }
             return item;
         }
-
     }
 }
