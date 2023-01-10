@@ -42,7 +42,11 @@ namespace SI_Berkas_Perusahaan.View
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.txtCari = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCari = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -77,15 +81,17 @@ namespace SI_Berkas_Perusahaan.View
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.btnCari);
+            this.groupBox1.Controls.Add(this.txtCari);
             this.groupBox1.Controls.Add(this.lvwPenanggungJawab);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // lvwPenanggungJawab
             // 
-            resources.ApplyResources(this.lvwPenanggungJawab, "lvwPenanggungJawab");
             this.lvwPenanggungJawab.HideSelection = false;
+            resources.ApplyResources(this.lvwPenanggungJawab, "lvwPenanggungJawab");
             this.lvwPenanggungJawab.Name = "lvwPenanggungJawab";
             this.lvwPenanggungJawab.UseCompatibleStateImageBehavior = false;
             this.lvwPenanggungJawab.SelectedIndexChanged += new System.EventHandler(this.lvwPenanggungJawab_SelectedIndexChanged);
@@ -106,6 +112,7 @@ namespace SI_Berkas_Perusahaan.View
             // 
             // btnDelete
             // 
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -118,25 +125,48 @@ namespace SI_Berkas_Perusahaan.View
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // txtCari
+            // 
+            resources.ApplyResources(this.txtCari, "txtCari");
+            this.txtCari.Name = "txtCari";
+            this.txtCari.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCari_KeyUp);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.btnReset);
+            this.groupBox2.Controls.Add(this.txtNamaLengkap);
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.btnUpdate);
+            this.groupBox2.Controls.Add(this.txtNoHP);
+            this.groupBox2.Controls.Add(this.btnTambah);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtEmail);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // btnCari
+            // 
+            this.btnCari.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.btnCari, "btnCari");
+            this.btnCari.Name = "btnCari";
+            this.btnCari.UseVisualStyleBackColor = true;
+            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
+            // 
             // FrmEntryPenanggungJawab
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNoHP);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNamaLengkap);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox2);
             this.Name = "FrmEntryPenanggungJawab";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -154,5 +184,8 @@ namespace SI_Berkas_Perusahaan.View
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.TextBox txtCari;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnCari;
     }
 }

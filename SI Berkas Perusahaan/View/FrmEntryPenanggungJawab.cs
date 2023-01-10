@@ -56,8 +56,7 @@ namespace SI_Berkas_Perusahaan.View
         private void LoadAllDataPenanggungJawab()
         {
             LoadDataPenanggungJawab(controller.ReadAll());
-            // setiap kali load data baru object penanggung jawab dikosongkan
-            ResetForm();
+
         }
 
         private void LoadDataPenanggungJawab(List<PenanggungJawab> items)
@@ -74,6 +73,8 @@ namespace SI_Berkas_Perusahaan.View
                 listOfPenanggungJawab.Add(item);
                 lvwPenanggungJawab.Items.Add(itemView);
             }
+            // setiap kali load data baru object penanggung jawab dikosongkan
+            ResetForm();
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -157,23 +158,42 @@ namespace SI_Berkas_Perusahaan.View
                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            int result = controller.Delete(penanggungJawab);
-            if (result > 0)
+
+            if (MessageBox.Show("Apakah kamu yakin?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                MessageBox.Show("Data berhasil dihapus !", "Informasi",
-               MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadAllDataPenanggungJawab();
+
+                int result = controller.Delete(penanggungJawab);
+                if (result > 0)
+                {
+                    MessageBox.Show("Data berhasil dihapus !", "Informasi",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadAllDataPenanggungJawab();
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal dihapus !!!", "Peringatan",
+                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
-            {
-                MessageBox.Show("Data gagal dihapus !!!", "Peringatan",
-               MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             ResetForm();
+        }
+
+        private void btnCari_Click(object sender, EventArgs e)
+        {
+            LoadDataPenanggungJawab(controller.ReadByName(txtCari.Text));
+
+        }
+
+
+        private void txtCari_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btnCari.PerformClick();
         }
     }
 }

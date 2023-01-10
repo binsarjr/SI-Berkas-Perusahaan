@@ -129,7 +129,7 @@ namespace SI_Berkas_Perusahaan.Model.Repository
             try
             {
                 string sql = @"select id, nama_lengkap, nohp,email
- from penanggung_jawab where nama_lengkap=@nama
+ from penanggung_jawab where nama_lengkap like @nama
  order by nama_lengkap";
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
                 {

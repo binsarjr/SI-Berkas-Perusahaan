@@ -82,6 +82,12 @@
     <Compile Include="View\FrmEntryPenanggungJawab.Designer.cs">
       <DependentUpon>FrmEntryPenanggungJawab.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmTransaksiBerkas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmTransaksiBerkas.Designer.cs">
+      <DependentUpon>FrmTransaksiBerkas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmUtama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmEntryPenanggungJawab.resx">
       <DependentUpon>FrmEntryPenanggungJawab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmTransaksiBerkas.resx">
+      <DependentUpon>FrmTransaksiBerkas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmUtama.resx">
       <DependentUpon>FrmUtama.cs</DependentUpon>

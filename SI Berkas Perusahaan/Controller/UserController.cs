@@ -24,10 +24,7 @@ namespace SI_Berkas_Perusahaan.Controller
                 result = _repository.ReadAttempt(username, password);
             }
 
-            if (result == 1)
-                MessageBox.Show("Login Berhasil !", "Informasi",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
+            if (result == 0)
                 MessageBox.Show("Username dan Password tidak ditemukan !!!", "Peringatan",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 

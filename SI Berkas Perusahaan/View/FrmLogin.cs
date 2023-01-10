@@ -30,5 +30,10 @@ namespace SI_Berkas_Perusahaan.View
                 this.Close();
             }
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

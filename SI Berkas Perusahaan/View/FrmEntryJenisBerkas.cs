@@ -41,7 +41,7 @@ namespace SI_Berkas_Perusahaan.View
         {
             LoadDataJenisBerkas(controller.ReadAll());
             // setiap kali load data baru object penanggung jawab dikosongkan
-            ResetForm();
+            
         }
 
         private void LoadDataJenisBerkas(List<JenisBerkas> items)
@@ -57,10 +57,12 @@ namespace SI_Berkas_Perusahaan.View
                 listOfJenisBerkas.Add(item);
                 lvwJenisBerkas.Items.Add(itemView);
             }
+            ResetForm();
         }
         private void ResetForm()
         {
             txtKode.Text = "";
+            txtKode.Enabled = true;
             txtNama.Text = "";
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
@@ -106,7 +108,7 @@ namespace SI_Berkas_Perusahaan.View
                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            jenisBerkas.Kode= txtKode.Text;
+            jenisBerkas.Kode = txtKode.Text;
             jenisBerkas.Nama = txtNama.Text;
 
             int result = controller.Update(jenisBerkas);
@@ -127,19 +129,22 @@ namespace SI_Berkas_Perusahaan.View
         {
             txtKode.Text = "";
             txtNama.Text = "";
+            // jika ada baris yang diklik/dipilih
             if (lvwJenisBerkas.SelectedItems.Count > 0)
             {
                 // ubah object penanggung jawab dengan data yang di select
-                jenisBerkas= listOfJenisBerkas[lvwJenisBerkas.SelectedIndices[0]];
+                jenisBerkas = listOfJenisBerkas[lvwJenisBerkas.SelectedIndices[0]];
                 txtKode.Text = jenisBerkas.Kode;
                 txtNama.Text = jenisBerkas.Nama;
 
+                txtKode.Enabled = false;
                 btnUpdate.Enabled = true;
                 btnDelete.Enabled = true;
             }
             else
             {
-                jenisBerkas= null;
+                jenisBerkas = null;
+                txtKode.Enabled = true;
                 btnUpdate.Enabled = false;
                 btnDelete.Enabled = false;
             }
@@ -153,18 +158,27 @@ namespace SI_Berkas_Perusahaan.View
                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            int result = controller.Delete(jenisBerkas);
-            if (result > 0)
+
+            if (MessageBox.Show("Apakah kamu yakin?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                MessageBox.Show("Data berhasil dihapus !", "Informasi",
-               MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadAllDataJenisBerkas();
+                int result = controller.Delete(jenisBerkas);
+                if (result > 0)
+                {
+                    MessageBox.Show("Data berhasil dihapus !", "Informasi",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadAllDataJenisBerkas();
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal dihapus !!!", "Peringatan",
+                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
-            {
-                MessageBox.Show("Data gagal dihapus !!!", "Peringatan",
-               MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+        }
+
+        private void btnCari_Click(object sender, EventArgs e)
+        {
+            LoadDataJenisBerkas(controller.ReadByName(txtCari.Text));
         }
     }
 }

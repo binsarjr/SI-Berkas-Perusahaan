@@ -125,7 +125,7 @@ namespace SI_Berkas_Perusahaan.Model.Repository
             try
             {
                 string sql = @"select kode,nama
- from jenis_berkas where nama@nama
+ from jenis_berkas where nama like @nama
  order by nama";
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
                 {
