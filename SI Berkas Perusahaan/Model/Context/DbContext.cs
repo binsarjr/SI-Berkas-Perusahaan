@@ -26,8 +26,8 @@ namespace SI_Berkas_Perusahaan.Model.Context
             SQLiteConnection conn = null;
             try
             {
-                string dbName = @"D:\Semester 3\Pemrograman Lanjut\Final Project\SI Berkas Perusahaan\Database\SiPendataanBerkas.db";
-                //string dbName =  Directory.GetCurrentDirectory()+ "\\Database\\SiPendataanBerkas.db";
+                //string dbName = @"D:\Semester 3\Pemrograman Lanjut\Final Project\SI Berkas Perusahaan\Database\SiPendataanBerkas.db";
+                string dbName =  Directory.GetCurrentDirectory()+ "\\Database\\SiPendataanBerkas.db";
                 string connectionString = string.Format("Data Source ={0}; FailIfMissing = True", dbName);
                 conn = new SQLiteConnection(connectionString); 
                 conn.Open(); 
