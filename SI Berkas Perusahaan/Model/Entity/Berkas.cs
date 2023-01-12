@@ -8,8 +8,9 @@ namespace SI_Berkas_Perusahaan.Model.Entity
 {
     public class Berkas
     {
+        public int Id { get; set; }
         public JenisBerkas JenisBerkas { get; set; }
-        public JenisBerkas PenanggungJawab { get; set; }
+        public PenanggungJawab PenanggungJawab { get; set; }
         public string NamaBerkas { get; set; }
         public DateTime TanggalMasuk { get; set; }
     }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 using System.Data.SQLite;
 using SI_Berkas_Perusahaan.Model.Context;
-
 using SI_Berkas_Perusahaan.Model.Entity;
+
 namespace SI_Berkas_Perusahaan.Model.Repository
 {
     public class JenisBerkasRepository
@@ -78,7 +78,7 @@ namespace SI_Berkas_Perusahaan.Model.Repository
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.Print("Delete PenanggungJawab error: {0}", ex.Message);
+                    System.Diagnostics.Debug.Print("Delete JenisBerkas error: {0}", ex.Message);
                 }
 
             }
@@ -144,37 +144,35 @@ namespace SI_Berkas_Perusahaan.Model.Repository
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Print("ReadByName PenanggungJawab error: {0}", ex.Message);
+                System.Diagnostics.Debug.Print("ReadByName JenisBerkas error: {0}", ex.Message);
             }
 
             return items;
         }
 
-        public PenanggungJawab ReadById(int id)
+        public JenisBerkas ReadByKode(string kode)
         {
-            PenanggungJawab item = null;
+            JenisBerkas item = null;
             try
             {
-                string sql = @"select id, nama_lengkap, nohp,email
- from penanggung_jawab where id=@id";
+                string sql = @"select kode,nama
+ from jenis_berkas where kode=@kode";
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", string.Format("%{0}%", id.ToString()));
+                    cmd.Parameters.AddWithValue("@kode", string.Format("%{0}%", kode));
                     using (SQLiteDataReader dtr = cmd.ExecuteReader())
                     {
                         while (dtr.Read())
                         {
-                            item.Id = Convert.ToInt32(dtr["id"].ToString());
-                            item.NamaLengkap = dtr["nama_lengkap"].ToString();
-                            item.NoHP = dtr["nohp"].ToString();
-                            item.Email = dtr["email"].ToString();
+                            item.Nama = dtr["nama"].ToString();
+                            item.Kode = dtr["kode"].ToString();
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Print("ReadById PenanggungJawab error: {0}", ex.Message);
+                System.Diagnostics.Debug.Print("ReadById JenisBerkas error: {0}", ex.Message);
             }
             return item;
         }

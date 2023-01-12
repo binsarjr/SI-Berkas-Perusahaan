@@ -18,7 +18,6 @@ namespace SI_Berkas_Perusahaan.View
             this.WindowState = FormWindowState.Maximized;
         }
 
-
         private void penanggungJawabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frmEntryPenanggungJawab = new FrmEntryPenanggungJawab();
@@ -34,6 +33,17 @@ namespace SI_Berkas_Perusahaan.View
         {
             var frmEntryJenisBerkas = new FrmEntryJenisBerkas();
             frmEntryJenisBerkas.ShowDialog();
+        }
+
+        private void berkasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmTransaksiBerkas = new FrmTransaksiBerkas();
+            frmTransaksiBerkas.ShowDialog();
+        }
+
+        private void FrmUtama_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

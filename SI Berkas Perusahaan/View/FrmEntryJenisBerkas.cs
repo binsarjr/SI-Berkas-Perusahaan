@@ -24,7 +24,7 @@ namespace SI_Berkas_Perusahaan.View
         {
             InitializeComponent();
             InitializeListView();
-            LoadAllDataJenisBerkas();
+            LoadDataJenisBerkas();
         }
         private void InitializeListView()
         {
@@ -37,24 +37,16 @@ namespace SI_Berkas_Perusahaan.View
             lvwJenisBerkas.Columns.Add("Nama", 100, HorizontalAlignment.Left);
         }
 
-        private void LoadAllDataJenisBerkas()
-        {
-            LoadDataJenisBerkas(controller.ReadAll());
-            // setiap kali load data baru object penanggung jawab dikosongkan
-            
-        }
-
-        private void LoadDataJenisBerkas(List<JenisBerkas> items)
+        private void LoadDataJenisBerkas()
         {
             lvwJenisBerkas.Items.Clear();
-            listOfJenisBerkas.Clear();
-            foreach (var item in items)
+            listOfJenisBerkas = controller.ReadByName(txtCari.Text);
+            foreach (var item in listOfJenisBerkas)
             {
                 var no = lvwJenisBerkas.Items.Count + 1;
                 var itemView = new ListViewItem(no.ToString());
                 itemView.SubItems.Add(item.Kode);
                 itemView.SubItems.Add(item.Nama);
-                listOfJenisBerkas.Add(item);
                 lvwJenisBerkas.Items.Add(itemView);
             }
             ResetForm();
@@ -90,7 +82,7 @@ namespace SI_Berkas_Perusahaan.View
                 MessageBox.Show("Data berhasil ditambahkan !", "Informasi",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LoadAllDataJenisBerkas();
+                LoadDataJenisBerkas();
                 txtKode.Select();
             }
             else
@@ -116,7 +108,7 @@ namespace SI_Berkas_Perusahaan.View
             {
                 MessageBox.Show("Data berhasil diperbaiki !", "Informasi",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadAllDataJenisBerkas();
+                LoadDataJenisBerkas();
             }
             else
             {
@@ -166,7 +158,7 @@ namespace SI_Berkas_Perusahaan.View
                 {
                     MessageBox.Show("Data berhasil dihapus !", "Informasi",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadAllDataJenisBerkas();
+                    LoadDataJenisBerkas();
                 }
                 else
                 {
@@ -178,7 +170,15 @@ namespace SI_Berkas_Perusahaan.View
 
         private void btnCari_Click(object sender, EventArgs e)
         {
-            LoadDataJenisBerkas(controller.ReadByName(txtCari.Text));
+            LoadDataJenisBerkas();
+        }
+
+        private void txtCari_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnCari.PerformClick();
+            }
         }
     }
 }

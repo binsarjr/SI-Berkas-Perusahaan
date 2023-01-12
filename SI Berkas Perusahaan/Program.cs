@@ -18,7 +18,6 @@ namespace SI_Berkas_Perusahaan
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
             var frmLogin = new FrmLogin();
             if(frmLogin.ShowDialog() == DialogResult.OK)
             {

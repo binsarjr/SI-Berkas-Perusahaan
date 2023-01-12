@@ -42,7 +42,6 @@ namespace SI_Berkas_Perusahaan.View
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -66,7 +65,7 @@ namespace SI_Berkas_Perusahaan.View
             // 
             this.keluarToolStripMenuItem.Name = "keluarToolStripMenuItem";
             this.keluarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.keluarToolStripMenuItem.Text = "Keluar";
             this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
             // 
@@ -107,8 +106,9 @@ namespace SI_Berkas_Perusahaan.View
             // 
             this.berkasToolStripMenuItem.Name = "berkasToolStripMenuItem";
             this.berkasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.berkasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.berkasToolStripMenuItem.Size = new System.Drawing.Size(229, 34);
             this.berkasToolStripMenuItem.Text = "Berkas";
+            this.berkasToolStripMenuItem.Click += new System.EventHandler(this.berkasToolStripMenuItem_Click);
             // 
             // FrmUtama
             // 
@@ -119,6 +119,7 @@ namespace SI_Berkas_Perusahaan.View
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmUtama";
             this.Text = "SI Pendataan Berkas";
+            this.Load += new System.EventHandler(this.FrmUtama_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

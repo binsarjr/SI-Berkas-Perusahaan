@@ -24,7 +24,7 @@ namespace SI_Berkas_Perusahaan.View
         {
             InitializeComponent();
             InitializeListView();
-            LoadAllDataPenanggungJawab();
+            LoadDataPenanggungJawab();
         }
 
         private void InitializeListView()
@@ -34,9 +34,9 @@ namespace SI_Berkas_Perusahaan.View
             lvwPenanggungJawab.GridLines = true;
 
             lvwPenanggungJawab.Columns.Add("No.", 35, HorizontalAlignment.Center);
-            lvwPenanggungJawab.Columns.Add("Nama Lengkap", 200, HorizontalAlignment.Left);
+            lvwPenanggungJawab.Columns.Add("Nama Lengkap", 150, HorizontalAlignment.Left);
             lvwPenanggungJawab.Columns.Add("No HP", 100, HorizontalAlignment.Left);
-            lvwPenanggungJawab.Columns.Add("Email", 200, HorizontalAlignment.Left);
+            lvwPenanggungJawab.Columns.Add("Email", 150, HorizontalAlignment.Left);
         }
 
         private void ResetForm()
@@ -53,24 +53,18 @@ namespace SI_Berkas_Perusahaan.View
                     this.lvwPenanggungJawab.Items[this.lvwPenanggungJawab.SelectedIndices[i]].Selected = false;
                 }
         }
-        private void LoadAllDataPenanggungJawab()
-        {
-            LoadDataPenanggungJawab(controller.ReadAll());
 
-        }
-
-        private void LoadDataPenanggungJawab(List<PenanggungJawab> items)
+        private void LoadDataPenanggungJawab()
         {
+            listOfPenanggungJawab = controller.ReadByName(txtCari.Text);
             lvwPenanggungJawab.Items.Clear();
-            listOfPenanggungJawab.Clear();
-            foreach (var item in items)
+            foreach (var item in listOfPenanggungJawab)
             {
                 var no = lvwPenanggungJawab.Items.Count + 1;
                 var itemView = new ListViewItem(no.ToString());
                 itemView.SubItems.Add(item.NamaLengkap);
                 itemView.SubItems.Add(item.NoHP);
                 itemView.SubItems.Add(item.Email);
-                listOfPenanggungJawab.Add(item);
                 lvwPenanggungJawab.Items.Add(itemView);
             }
             // setiap kali load data baru object penanggung jawab dikosongkan
@@ -91,7 +85,7 @@ namespace SI_Berkas_Perusahaan.View
                 MessageBox.Show("Data berhasil ditambahkan !", "Informasi",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LoadAllDataPenanggungJawab();
+                LoadDataPenanggungJawab();
                 txtNamaLengkap.Select();
             }
             else
@@ -118,7 +112,7 @@ namespace SI_Berkas_Perusahaan.View
             {
                 MessageBox.Show("Data berhasil diperbaiki !", "Informasi",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadAllDataPenanggungJawab();
+                LoadDataPenanggungJawab();
             }
             else
             {
@@ -167,7 +161,7 @@ namespace SI_Berkas_Perusahaan.View
                 {
                     MessageBox.Show("Data berhasil dihapus !", "Informasi",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadAllDataPenanggungJawab();
+                    LoadDataPenanggungJawab();
                 }
                 else
                 {
@@ -186,7 +180,7 @@ namespace SI_Berkas_Perusahaan.View
 
         private void btnCari_Click(object sender, EventArgs e)
         {
-            LoadDataPenanggungJawab(controller.ReadByName(txtCari.Text));
+            LoadDataPenanggungJawab();
 
         }
 

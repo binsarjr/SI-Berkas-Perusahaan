@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\BerkasController.cs" />
     <Compile Include="Controller\JenisBerkasController.cs" />
     <Compile Include="Controller\PenanggungJawabController.cs" />
     <Compile Include="Controller\UserController.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Model\Entity\JenisBerkas.cs" />
     <Compile Include="Model\Entity\PenanggungJawab.cs" />
     <Compile Include="Model\Entity\User.cs" />
+    <Compile Include="Model\Repository\BerkasRepository.cs" />
     <Compile Include="Model\Repository\JenisBerkasRepository.cs" />
     <Compile Include="Model\Repository\PenanggungJawabRepository.cs" />
     <Compile Include="Model\Repository\UserRepository.cs" />
@@ -81,6 +83,12 @@
     </Compile>
     <Compile Include="View\FrmEntryPenanggungJawab.Designer.cs">
       <DependentUpon>FrmEntryPenanggungJawab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSelectPenanggungJawab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSelectPenanggungJawab.Designer.cs">
+      <DependentUpon>FrmSelectPenanggungJawab.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmTransaksiBerkas.cs">
       <SubType>Form</SubType>
@@ -111,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmEntryPenanggungJawab.resx">
       <DependentUpon>FrmEntryPenanggungJawab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmSelectPenanggungJawab.resx">
+      <DependentUpon>FrmSelectPenanggungJawab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmTransaksiBerkas.resx">
       <DependentUpon>FrmTransaksiBerkas.cs</DependentUpon>

@@ -30,6 +30,8 @@ namespace SI_Berkas_Perusahaan.View
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCari = new System.Windows.Forms.Button();
+            this.txtCari = new System.Windows.Forms.TextBox();
             this.lvwJenisBerkas = new System.Windows.Forms.ListView();
             this.txtNama = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,8 +42,6 @@ namespace SI_Berkas_Perusahaan.View
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnCari = new System.Windows.Forms.Button();
-            this.txtCari = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,26 @@ namespace SI_Berkas_Perusahaan.View
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tabel Jenis Berkas";
+            // 
+            // btnCari
+            // 
+            this.btnCari.ForeColor = System.Drawing.Color.Black;
+            this.btnCari.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCari.Location = new System.Drawing.Point(612, 38);
+            this.btnCari.Name = "btnCari";
+            this.btnCari.Size = new System.Drawing.Size(118, 32);
+            this.btnCari.TabIndex = 12;
+            this.btnCari.Text = "Cari";
+            this.btnCari.UseVisualStyleBackColor = true;
+            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
+            // 
+            // txtCari
+            // 
+            this.txtCari.Location = new System.Drawing.Point(6, 41);
+            this.txtCari.Name = "txtCari";
+            this.txtCari.Size = new System.Drawing.Size(600, 26);
+            this.txtCari.TabIndex = 13;
+            this.txtCari.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCari_KeyUp);
             // 
             // lvwJenisBerkas
             // 
@@ -156,25 +176,6 @@ namespace SI_Berkas_Perusahaan.View
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Entri";
-            // 
-            // btnCari
-            // 
-            this.btnCari.ForeColor = System.Drawing.Color.Black;
-            this.btnCari.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCari.Location = new System.Drawing.Point(612, 38);
-            this.btnCari.Name = "btnCari";
-            this.btnCari.Size = new System.Drawing.Size(118, 32);
-            this.btnCari.TabIndex = 12;
-            this.btnCari.Text = "Cari";
-            this.btnCari.UseVisualStyleBackColor = true;
-            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
-            // 
-            // txtCari
-            // 
-            this.txtCari.Location = new System.Drawing.Point(6, 41);
-            this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new System.Drawing.Size(600, 26);
-            this.txtCari.TabIndex = 13;
             // 
             // FrmEntryJenisBerkas
             // 
