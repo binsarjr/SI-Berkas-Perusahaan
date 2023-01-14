@@ -18,6 +18,9 @@ namespace SI_Berkas_Perusahaan.Controller
     {
         private BerkasRepository _repository;
 
+        /**
+         * Memvalidasi data yang akan diproses
+         */
         private bool Validate(Berkas item)
         {
             if (string.IsNullOrEmpty(item.NamaBerkas))

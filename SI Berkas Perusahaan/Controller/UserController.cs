@@ -14,6 +14,11 @@ namespace SI_Berkas_Perusahaan.Controller
     {
         private UserRepository _repository;
 
+
+        /**
+         * Mengecek apakah username dan password yang diinputkan terdapat
+         * di database atau tidak
+         */
         public bool Attempt(string username, string password)
         {
             int result = 0;

@@ -39,6 +39,9 @@ namespace SI_Berkas_Perusahaan.View
             lvwPenanggungJawab.Columns.Add("Email", 150, HorizontalAlignment.Left);
         }
 
+        /**
+         * Mereset form form yang ada kembali ke semula
+         */
         private void ResetForm()
         {
             penanggungJawab = null;
@@ -187,6 +190,7 @@ namespace SI_Berkas_Perusahaan.View
 
         private void txtCari_KeyUp(object sender, KeyEventArgs e)
         {
+            // klik btnCari apabila pada text cari ditekan enter
             if (e.KeyCode == Keys.Enter) btnCari.PerformClick();
         }
     }

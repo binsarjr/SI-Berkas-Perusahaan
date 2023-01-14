@@ -24,6 +24,7 @@ namespace SI_Berkas_Perusahaan.View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // cek username dan password valid atau tidak
             if(_controller.Attempt(txtUsername.Text, txtPassword.Text))
             {
                 this.DialogResult = DialogResult.OK;

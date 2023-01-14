@@ -13,6 +13,7 @@ namespace SI_Berkas_Perusahaan.Model.Repository
 {
     public class BerkasRepository
     {
+        // sqlconnection
         private SQLiteConnection _conn;
         public BerkasRepository(DbContext context)
         {
@@ -23,6 +24,7 @@ namespace SI_Berkas_Perusahaan.Model.Repository
         {
             int result = 0;
 
+            // query insert ke database dengan nama table transaksi_berkas
             string sql = @"INSERT INTO transaksi_berkas
                 (id_penanggung_jawab, nama_berkas, kode_jenis_berkas, tgl_masuk)
                 values
@@ -51,6 +53,7 @@ namespace SI_Berkas_Perusahaan.Model.Repository
         {
             int result = 0;
 
+            // query update transaksi_berkas
             string sql = @"update transaksi_berkas set
                     id_penanggung_jawab=@penanggung_jawab,
                     nama_berkas=@nama,
@@ -80,7 +83,7 @@ namespace SI_Berkas_Perusahaan.Model.Repository
         public int Delete(Berkas item)
         {
             int result = 0;
-
+            // query delete transaksi_berkas
             string sql = @"DELETE FROM transaksi_berkas WHERE id=@id";
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
@@ -105,6 +108,7 @@ namespace SI_Berkas_Perusahaan.Model.Repository
 
             try
             {
+                // query select transaksi_berkas join dengan tabel penanggung_jawab dan jenis_berkas
                 string sql = @"select 
 transaksi_berkas.id, id_penanggung_jawab,kode_jenis_berkas, nama_berkas, tgl_masuk, jenis_berkas.nama as jenis_berkas,
 email,nama_lengkap, nohp
@@ -118,10 +122,13 @@ email,nama_lengkap, nohp
                     {
                         while (dtr.Read())
                         {
+                            // menyiapkan data ke object berkas
                             var item = new Berkas();
                             item.Id = Convert.ToInt32(dtr["id"].ToString());
                             item.NamaBerkas = dtr["nama_berkas"].ToString();
                             item.TanggalMasuk = DateTime.Parse(dtr["tgl_masuk"].ToString());
+
+                            // menyiapkan data ke object penanggung_jawab
                             item.PenanggungJawab = new PenanggungJawab()
                             {
                                 Id = Convert.ToInt32(dtr["id_penanggung_jawab"].ToString()),
@@ -129,6 +136,7 @@ email,nama_lengkap, nohp
                                 NamaLengkap = dtr["nama_lengkap"].ToString(),
                                 NoHP = dtr["nohp"].ToString()
                             };
+                            // menyiapkan data ke object jenis berkas
                             item.JenisBerkas = new JenisBerkas()
                             {
                                 Kode = dtr["kode_jenis_berkas"].ToString(),
@@ -154,6 +162,8 @@ email,nama_lengkap, nohp
 
             try
             {
+                // query select transaksi_berkas join dengan tabel penanggung_jawab dan jenis_berkas
+                // sesuai dengan nama yang diinputkan
                 string sql = @"select 
 transaksi_berkas.id, id_penanggung_jawab,kode_jenis_berkas, nama_berkas, tgl_masuk, jenis_berkas.nama as jenis_berkas,
 email,nama_lengkap, nohp
@@ -169,10 +179,13 @@ where nama_berkas like @nama_berkas
                     {
                         while (dtr.Read())
                         {
+                            // menyiapkan data ke object berkas
                             var item = new Berkas();
                             item.Id = Convert.ToInt32(dtr["id"].ToString());
                             item.NamaBerkas = dtr["nama_berkas"].ToString();
                             item.TanggalMasuk = DateTime.Parse(dtr["tgl_masuk"].ToString());
+
+                            // menyiapkan data ke object penanggung_jawab
                             item.PenanggungJawab= new PenanggungJawab()
                             {
                                 Id = Convert.ToInt32(dtr["id_penanggung_jawab"].ToString()),
@@ -180,6 +193,7 @@ where nama_berkas like @nama_berkas
                                 NamaLengkap = dtr["nama_lengkap"].ToString(),
                                 NoHP = dtr["nohp"].ToString()
                             };
+                            // menyiapkan data ke object jenis berkas
                             item.JenisBerkas = new JenisBerkas()
                             {
                                 Kode = dtr["kode_jenis_berkas"].ToString(),
@@ -203,6 +217,8 @@ where nama_berkas like @nama_berkas
             Berkas item = null;
             try
             {
+                // query select transaksi_berkas join dengan tabel penanggung_jawab dan jenis_berkas
+                // berdasarkan id
                 string sql = @"select 
 transaksi_berkas.id, id_penanggung_jawab,kode_jenis_berkas, nama_berkas, tgl_masuk, jenis_berkas.nama as jenis_berkas,
 email,nama_lengkap, nohp

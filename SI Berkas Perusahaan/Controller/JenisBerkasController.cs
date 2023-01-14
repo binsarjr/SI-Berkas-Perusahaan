@@ -15,6 +15,9 @@ namespace SI_Berkas_Perusahaan.Controller
     {
         private JenisBerkasRepository _repository;
 
+        /**
+         * Memvalidasi data data sebelum masuk ke proses utama
+         */
         private bool Validate(JenisBerkas item)
         {
             if (item.Nama== "")

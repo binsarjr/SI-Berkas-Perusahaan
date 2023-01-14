@@ -15,6 +15,9 @@ namespace SI_Berkas_Perusahaan.Controller
     {
         private PenanggungJawabRepository _repository;
 
+        /**
+         * Memvalidasi data data sebelum masuk ke proses utama
+         */
         private bool Validate(PenanggungJawab penanggungJawab)
         {
             if (penanggungJawab.NamaLengkap == "")

@@ -16,8 +16,9 @@ namespace SI_Berkas_Perusahaan.View
 {
     public partial class FrmEntryJenisBerkas : Form
     {
-
+        // menampung data jenis berkas
         private List<JenisBerkas> listOfJenisBerkas = new List<JenisBerkas>();
+        // init controoller jenis berkas
         private JenisBerkasController controller = new JenisBerkasController();
         private JenisBerkas jenisBerkas = null;
         public FrmEntryJenisBerkas()
@@ -26,6 +27,11 @@ namespace SI_Berkas_Perusahaan.View
             InitializeListView();
             LoadDataJenisBerkas();
         }
+
+
+        /**
+         * Mempersiapkan kolom list view jenis berkas
+         */
         private void InitializeListView()
         {
             lvwJenisBerkas.View = System.Windows.Forms.View.Details;
@@ -37,9 +43,14 @@ namespace SI_Berkas_Perusahaan.View
             lvwJenisBerkas.Columns.Add("Nama", 100, HorizontalAlignment.Left);
         }
 
+        /**
+         * Load data jenis berkas yang telah disesuaikan dengan text box txtCari
+         */
         private void LoadDataJenisBerkas()
         {
+            // mengosongkan list view 
             lvwJenisBerkas.Items.Clear();
+            // get data jenis berkas
             listOfJenisBerkas = controller.ReadByName(txtCari.Text);
             foreach (var item in listOfJenisBerkas)
             {
@@ -51,6 +62,11 @@ namespace SI_Berkas_Perusahaan.View
             }
             ResetForm();
         }
+
+        /**
+         * Mereset form form menjadi seperti semula
+         * Terlebih jika telah selesai melakukan suatu aksi
+         */
         private void ResetForm()
         {
             txtKode.Text = "";
@@ -94,6 +110,7 @@ namespace SI_Berkas_Perusahaan.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            // cek jenis berkas apabila belum dipilih maka tampilkan pesannya
             if (jenisBerkas == null)
             {
                 MessageBox.Show("Data belum dipilih !!!", "Peringatan",

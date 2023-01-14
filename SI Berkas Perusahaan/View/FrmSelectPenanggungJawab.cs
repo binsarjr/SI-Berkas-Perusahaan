@@ -18,6 +18,7 @@ namespace SI_Berkas_Perusahaan.View
 {
     public partial class FrmSelectPenanggungJawab : Form
     {
+        // data tampungan untuk list penanggung jawab
         private List<PenanggungJawab> listOfPenanggungJawab = new List<PenanggungJawab>();
         private PenanggungJawabController controller = new PenanggungJawabController();
         public PenanggungJawab penanggungJawab = null;
@@ -39,6 +40,9 @@ namespace SI_Berkas_Perusahaan.View
             lvwPenanggungJawab.Columns.Add("No HP", 100, HorizontalAlignment.Left);
             lvwPenanggungJawab.Columns.Add("Email", 150, HorizontalAlignment.Left);
         }
+        /**
+         * Reset kembali ke semula
+         */
         private void ResetForm()
         {
             penanggungJawab = null;
@@ -49,6 +53,9 @@ namespace SI_Berkas_Perusahaan.View
                 }
         }
 
+        /**
+         * Load data penanggung jawab sesuai dengan isi text cari
+         */
         private void LoadDataPenanggungJawab()
         {
             listOfPenanggungJawab = controller.ReadByName(txtCari.Text);
@@ -90,21 +97,31 @@ namespace SI_Berkas_Perusahaan.View
 
         private void btnCari_Click(object sender, EventArgs e)
         {
-
             LoadDataPenanggungJawab();
         }
 
 
         private void txtCari_KeyUp(object sender, KeyEventArgs e)
         {
-
+            // klik button cari menggunakan kode program apabila pada textbox
+            // txtCari user menekan tombol enter
             if (e.KeyCode == Keys.Enter) btnCari.PerformClick();
         }
 
+        /**
+         * Tutup form ketika tombol pilih ditekan
+         */
         private void btnPilih_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if(penanggungJawab==null)
+            {
+                MessageBox.Show("Data belum dipilih !!!", "Peringatan",
+              MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            } else
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }
